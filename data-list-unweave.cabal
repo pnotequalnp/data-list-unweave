@@ -2,6 +2,7 @@ cabal-version: 2.4
 name:          data-list-unweave
 synopsis:      Unweaving lists
 version:       0.1.0.0
+package-url:   https://github.com/pnotequalnp/data-list-unweave
 license:       ISC
 license-file:  LICENSE
 author:        Kevin Mullins
