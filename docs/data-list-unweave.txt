@@ -6,7 +6,7 @@
 --   
 --   Unweaving lists
 @package data-list-unweave
-@version 0.1.0.0
+@version 0.1.0.1
 
 
 -- | <h1>Data.List.Unweave</h1>
