@@ -16,8 +16,22 @@ module Data.List.Unweave
 
 -- | <i>O(n)</i>. Unweave a list, such that the two components interleaved
 --   are the original list.
+--   
+--   Example:
+--   
+--   <pre>
+--   &gt;&gt;&gt; unweave [1..10]
+--   ([1,3,5,7,9],[2,4,6,8,10])
+--   </pre>
 unweave :: [a] -> ([a], [a])
 
 -- | <i>O(n)</i>. Unweave a list, such that the three components
 --   interleaved are the original list.
+--   
+--   Example:
+--   
+--   <pre>
+--   &gt;&gt;&gt; unweave3 [1..10]
+--   ([1,4,7,10],[2,5,8],[3,6,9])
+--   </pre>
 unweave3 :: [a] -> ([a], [a], [a])
