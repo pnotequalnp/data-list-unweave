@@ -1,7 +1,7 @@
 cabal-version: 2.4
 name:          data-list-unweave
 synopsis:      Unweaving lists
-version:       0.1.0.0
+version:       0.1.0.1
 package-url:   https://github.com/pnotequalnp/data-list-unweave
 license:       ISC
 license-file:  LICENSE
@@ -38,3 +38,15 @@ benchmark data-list-unweave-bench
     , base               >=4
     , criterion          ^>=1.5.13
     , data-list-unweave
+
+executable unweave
+  hs-source-dirs:   app
+  main-is:          Main.hs
+  default-language: Haskell2010
+  ghc-options:      -Wall
+  other-modules:    Paths_data_list_unweave
+  build-depends:
+    , base                  >=4
+    , data-list-unweave
+    , optparse-applicative  ^>=0.16.1
+    , text                  ^>=1.2.4
