@@ -1,6 +1,7 @@
 # data-list-unweave
-This is a simple Haskell package that is more intended to demonstrate Haskell packaging than it is
-intended to be useful as a Haskell package.
+This is a simple Haskell package that is more intended to demonstrate Haskell packaging without
+using Hackage than it is intended to be useful as a Haskell package. Please don't pollute Hackage
+with random packages. 
 
 ## CI
 
@@ -16,7 +17,7 @@ The Haddock docs are automatically built and pushed to the `doc` branch, and are
 The binary for the executable is automatically built, a release is created, and the binary is
 uploaded to that release as an asset.
 
-## Usage
+## Library Usage
 
 ### Cabal
 You'll need to create a `cabal.project` file for your project. In that file, specify a remote source
@@ -34,24 +35,5 @@ your `build-depends` like normal, and cabal will automatically download and buil
 GitHub.
 
 ### Nix (Flakes)
-You'll want to add it to your Haskell package set with an override. That might look like this:
-
-``` nix
-{
-  inputs = {
-    # ...
-    data-list-unweave.url = "github:pnotequalnp/data-list-unweave";
-  };
-
-  outputs = { data-list-unweave, ... }:
-    let hs = pkgs.haskellPackages.override {
-          overrides = self: super: {
-            data-list-unweave = data-list-unweave.packages.${system}.data-list-unweave;
-          };
-        };
-     in {
-    # ...
-  };
-}
-```
-Then add it to your `build-depends` like usual.
+Add `data-list-unweave` to your `build-depends` like usual, and apply the overlay provided by this
+flake when importing Nixpkgs.
