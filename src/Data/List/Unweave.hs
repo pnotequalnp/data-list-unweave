@@ -15,6 +15,11 @@ module Data.List.Unweave
 where
 
 -- | /O(n)/. Unweave a list, such that the two components interleaved are the original list.
+--
+-- Example:
+--
+-- >>> unweave [1..10]
+-- ([1,3,5,7,9],[2,4,6,8,10])
 unweave :: [a] -> ([a], [a])
 unweave [] = ([], [])
 unweave l@[_] = (l, [])
@@ -23,6 +28,11 @@ unweave (y : z : xs) =
    in (y : ys, z : zs)
 
 -- | /O(n)/. Unweave a list, such that the three components interleaved are the original list.
+--
+-- Example:
+--
+-- >>> unweave3 [1..10]
+-- ([1,4,7,10],[2,5,8],[3,6,9])
 unweave3 :: [a] -> ([a], [a], [a])
 unweave3 [] = ([], [], [])
 unweave3 l@[_] = (l, [], [])
